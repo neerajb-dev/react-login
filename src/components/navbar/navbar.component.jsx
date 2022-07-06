@@ -1,5 +1,6 @@
-import {Outlet} from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import NavbarContent from "../navbar-content/navbar-content.component";
+import "./navbar.styles.css";
 
 const Navbar = () => {
     return (

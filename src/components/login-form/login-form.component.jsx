@@ -33,7 +33,14 @@ const LoginForm = () => {
             url: "https://reqres.in/api/login",
             data: data
         }).then(res => {
-            console.log(res);
+            console.log(res.data);      // this will return an object containing a token response from our api
+
+            // to store token in local storage 
+            if(res.data) {
+                window.localStorage.setItem("token", res.data.token);
+                navigate("/");
+            }
+
         }).catch(err => {
             console.log(err);
         })
@@ -51,14 +58,14 @@ const LoginForm = () => {
     return (
         <div className="login-form__container bg-light rounded p-5">
             <form onSubmit={handleLogin}>
-                <div className="mb-3">
+                <div className="form-floating mb-3">
+                    <input type="email" className="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter Email" onChange={(e) => handleEmail(e)} />
                     <label htmlFor="inputEmail" className="form-label">Email address</label>
-                    <input type="email" className="form-control" id="inputEmail" aria-describedby="emailHelp" onChange={(e) => handleEmail(e)} />
                     <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                 </div>
-                <div className="mb-3">
+                <div className="form-floating mb-3">
+                    <input type="password" className="form-control" id="inputPassword" placeholder="Enter password" onChange={(e) => handlePassword(e)} />
                     <label htmlFor="inputPassword" className="form-label">Password</label>
-                    <input type="password" className="form-control" id="inputPassword" onChange={(e) => handlePassword(e)} />
                 </div>
                 <button type="submit" className="btn btn-primary me-3" >Login</button>
                 <button className="btn btn-secondary" onClick={handleSignUp} >Sign Up</button>
