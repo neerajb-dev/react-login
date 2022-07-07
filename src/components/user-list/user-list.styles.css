@@ -1,0 +1,5 @@
+.user__list--item:hover, .user--avatar {
+    background-color: #fff !important;
+    color: #000;
+    box-shadow: 0px 0px 12px 2px #6e6e6e;
+}

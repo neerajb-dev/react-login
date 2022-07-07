@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/navbar/navbar.component";
+import UserDetail from "./components/user-detail/user-detail.component";
 import Home from "./pages/home/home.component";
 import Login from "./pages/login/login.component";
 import Product from "./pages/product/product.component";
@@ -17,6 +18,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/dashboard" element={<UserDashboard />} />
+          <Route path="/dashboard/:id" element={<UserDetail />} />
         </Route>
       </Routes>
 
