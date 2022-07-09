@@ -21,7 +21,6 @@ function App() {
           <Route path="/dashboard/:id" element={<UserDetail />} />
         </Route>
       </Routes>
-
     </div>
   );
 }
